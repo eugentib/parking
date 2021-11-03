@@ -5,13 +5,13 @@ const options = {
   connectTimeout: 4000,
   // Auth
   clientId: 'emqx_test',
-  username: 'emqx_test',
-  password: 'emqx_test',
+  username: 'parking-brasov@ttn',
+  password: 'NNSXS.R5LUMO3Y4HPAEIONKBL3PFMCL37VR7PVAWHBIFI.DHTUGNZRMYPI6ZDNAL6LR6V3RIRTKRVY423SJFTV7TIRVYCKNNVA',
 }
-const client  = mqtt.connect('mqtt://broker.emqx.io:1883')
+const client  = mqtt.connect('mqtt://eu1.cloud.thethings.network:1883')
 client.on('connect', function () {
   console.log('Connected')
-  client.subscribe('test', function (err) {
+  client.subscribe('#', function (err) {
     if (!err) {
       client.publish('test', 'Hello mqtt')
     }
